@@ -1,0 +1,21 @@
+#progess-percent, #progess-steps {
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 5px 0;
+}
+
+#progess-percent {
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+#progess-bar {
+    height: 14px;
+    background-color: var(--primary-color);
+    border-radius: 7px;
+    box-shadow: var(--box-shadow);
+}
+
+#progress-bar-container{
+    width: 100%;
+}
