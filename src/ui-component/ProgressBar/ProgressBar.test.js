@@ -13,4 +13,5 @@ test('renders Progress Bar with 70%', () => {
 
   const steps = screen.getByText(/Tu as fais 7 cartes sur 10 dans ta catégorie./);
   expect(steps).toBeInTheDocument();
+  expect(screen.getByTestId('visual-progession')).toHaveStyle('width: 70%')
 });

@@ -28,7 +28,7 @@ const ProgressBar = ({ currentStep, steps }) => {
     <div id="progress-bar-container">
         <p id="progess-percent" style={progressWidth}>{percent}</p>
         <Card>
-            <div id="progess-bar" style={progressWidth}></div>
+            <div data-testid="visual-progession" id="progess-bar" style={progressWidth}></div>
         </Card>
         <p id="progess-steps">Tu as fais {currentStep} cartes sur {steps} dans ta catégorie.</p>
     </div>
