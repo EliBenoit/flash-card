@@ -71,11 +71,11 @@ test('render a not disabled button by default', () => {
   expect(screen.getByRole("button")).not.toBeDisabled();
 });
 
-test('trigger the bind action button', async () => {
+test('trigger the bind action button', () => {
   const mockAction = jest.fn();
   render(<Button action={mockAction}/>)
 
-  await fireEvent.click(screen.getByRole('button'))
+  fireEvent.click(screen.getByRole('button'))
 
   expect(mockAction).toHaveBeenCalledTimes(1)
 })
