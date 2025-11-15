@@ -1,0 +1,9 @@
+#card-header {
+    width: 100%;
+    padding: 28px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+#card-header > h2 {
+    text-align: center;
+}
