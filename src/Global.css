@@ -1,11 +1,16 @@
 :root {
+  /*Color*/
   --background-color: #FFF;
-  --box-shadow: 0 3px 8px #00000026;
   --primary-color: #638354;
   --secondary-color: #3B1F13;
   --neutral-color: #DFDBD9;
+
+  /*Border*/
+  --box-shadow: 0 3px 8px #00000026;
   --medium-border-radius: 25px;
   --big-border-radius: 50px;
+  
+  /*Font*/
   --font-bold: 600;
 }
 
