@@ -18,7 +18,7 @@ test('renders with default size', () => {
     </Button>
   );
   
-  expect(screen.getByRole("button")).toHaveClass('medium');
+  expect(screen.getByRole("button")).toHaveClass('btn btn-medium');
 });
 
 test('renders medium size when wrong size prop', () => {
@@ -28,7 +28,7 @@ test('renders medium size when wrong size prop', () => {
     </Button>
   );
   
-  expect(screen.getByRole("button")).toHaveClass('medium');
+  expect(screen.getByRole("button")).toHaveClass('btn btn-medium');
 });
 
 test('renders with big size', () => {
@@ -38,7 +38,7 @@ test('renders with big size', () => {
     </Button>
   );
 
-  expect(screen.getByRole("button")).toHaveClass('big');
+  expect(screen.getByRole("button")).toHaveClass('btn btn-big');
 });
 
 test('render a disable button', () => {

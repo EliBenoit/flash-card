@@ -1,4 +1,4 @@
-button {
+.btn {
     box-shadow: var(--box-shadow);
     background-color: var(--neutral-color);
     border : 4px solid transparent;
@@ -8,12 +8,12 @@ button {
     padding: 5%;
 }
 
-button:hover {
+.btn:hover {
     background-color: var(--primary-color);
     color: var(--neutral-color);
 }
 
-button:active {
+.btn:active {
     background-color: var(--neutral-color);
     border-color: var(--primary-color);
     color:var(--secondary-color);
