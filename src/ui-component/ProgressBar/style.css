@@ -1,6 +1,6 @@
 #progess-percent, #progess-steps {
     color: var(--primary-color);
-    font-weight: 600;
+    font-weight: var(--font-bold);
     padding: 5px 0;
 }
 
