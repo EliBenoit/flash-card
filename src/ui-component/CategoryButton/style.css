@@ -1,0 +1,29 @@
+.grayscale-color {
+    filter: grayscale(1);
+}
+
+.hover-face:hover, .color-face {
+    filter: unset;
+}
+
+.btn-category {
+    background-color: unset;
+}
+
+.btn-category-big {
+    height: 100px;
+    width: 100px;
+}
+
+.btn-category-medium {
+    height: 80px;
+    width: 80px;
+}
+
+.neutral-mouth {
+    fill:none;
+    stroke-linecap:round;
+    stroke-miterlimit:10;
+    stroke-width:12px;
+}
+
