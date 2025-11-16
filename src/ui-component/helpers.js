@@ -5,7 +5,7 @@
  * @return An empty string or a correct string for button class name.
  */
 function isSizeValidClassName (size) {
-    const validClassSizes = ['medium', 'big'];
+    const validClassSizes = ['small', 'medium', 'big'];
     return validClassSizes.includes(size) ? size : ''; 
 }
 

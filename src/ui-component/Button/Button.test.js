@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Button from './Button';
 
-test('renders with his child', () => {
+test('render with his child', () => {
   render(
     <Button>
         <p data-testid="test-children">Coucou</p>
@@ -11,17 +11,17 @@ test('renders with his child', () => {
   expect(screen.getByTestId("test-children")).toBeInTheDocument();
 });
 
-test('renders with default settings', () => {
+test('render with default settings', () => {
   render(
     <Button>
         <p data-testid="test-children">Coucou</p>
     </Button>
   );
   
-  expect(screen.getByRole("button")).toHaveClass('btn-medium default-btn');
+  expect(screen.getByRole("button")).toHaveClass('medium-btn default-btn');
 });
 
-test('renders with wrong color prop', () => {
+test('render with wrong color prop', () => {
   render(
     <Button color='red'>
         <p data-testid="test-children">Coucou</p>
@@ -31,7 +31,7 @@ test('renders with wrong color prop', () => {
   expect(screen.getByRole("button")).toHaveClass('default-btn');
 });
 
-test('renders with primary color prop', () => {
+test('render with primary color prop', () => {
   render(
     <Button color='primary'>
         <p data-testid="test-children">Coucou</p>
@@ -41,7 +41,7 @@ test('renders with primary color prop', () => {
   expect(screen.getByRole("button")).toHaveClass('primary-btn');
 });
 
-test('renders with default color prop', () => {
+test('render with default color prop', () => {
   render(
     <Button color='default'>
         <p data-testid="test-children">Coucou</p>
@@ -51,7 +51,7 @@ test('renders with default color prop', () => {
   expect(screen.getByRole("button")).toHaveClass('default-btn');
 });
 
-test('renders with secondary color prop', () => {
+test('render with secondary color prop', () => {
   render(
     <Button color='secondary'>
         <p data-testid="test-children">Coucou</p>
@@ -61,24 +61,44 @@ test('renders with secondary color prop', () => {
   expect(screen.getByRole("button")).toHaveClass('secondary-btn');
 });
 
-test('renders medium size when wrong size prop', () => {
+test('render medium size when wrong size prop', () => {
   render(
     <Button size="m">
         <p data-testid="test-children">Coucou</p>
     </Button>
   );
   
-  expect(screen.getByRole("button")).toHaveClass('btn-medium');
+  expect(screen.getByRole("button")).toHaveClass('medium-btn');
 });
 
-test('renders with big size', () => {
+test('render with big size', () => {
   render(
     <Button size="big">
         <p data-testid="test-children">Coucou</p>
     </Button>
   );
 
-  expect(screen.getByRole("button")).toHaveClass('btn-big');
+  expect(screen.getByRole("button")).toHaveClass('big-btn');
+});
+
+test('render with medium size', () => {
+  render(
+    <Button size="medium">
+        <p data-testid="test-children">Coucou</p>
+    </Button>
+  );
+
+  expect(screen.getByRole("button")).toHaveClass('medium-btn');
+});
+
+test('render with small size', () => {
+  render(
+    <Button size="small">
+        <p data-testid="test-children">Coucou</p>
+    </Button>
+  );
+
+  expect(screen.getByRole("button")).toHaveClass('small-btn');
 });
 
 test('render a disable button', () => {
