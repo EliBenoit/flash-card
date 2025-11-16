@@ -6,18 +6,18 @@ import { Emptyface, NeutralFace, SmileFace, HappyFace, UnhappyFace } from './smi
 /**
  * This function help to choose the smiley to display.
  * 
- * @param {Boolean} color - If the face need to have color.
- * @param {Boolean} disable - If the category button is disable or not. That affect face apparence. 
+ * @param {Boolean} isInColor - If the face need to have color.
+ * @param {Boolean} isDisable - If the category button is disable or not. That affect face apparence. 
  * 
  * @return SVG code with the selected smiley, by defaut it's an empty face.
  */
-function getSmiley (color, disable, smiley) {
+function getSmiley (isInColor, isDisable, smiley) {
     return (
     <svg 
         xmlns="http://www.w3.org/2000/svg" 
         id={`face-${smiley}`} 
         data-testid={`face-${smiley}`} 
-        className={`grayscale-color ${color && !disable ? 'color-face' : ''} ${!disable ? 'hover-face' : ''}`} 
+        className={`grayscale-color ${isInColor && !isDisable ? 'color-face' : ''} ${!isDisable ? 'hover-face' : ''}`} 
         data-name={`face-${smiley}`} 
         viewBox="0 0 173.66 176.9"
     >
@@ -53,21 +53,21 @@ function getCategorySmiley(category) {
  * CategoryButton component
  * 
  * @param {Function} action - the action to call on click event.
- * @param {Boolean} color - If the face need to have color.
- * @param {Boolean} disable - If the category button is disable or not.
+ * @param {Boolean} isInColor - If the face need to have color.
+ * @param {Boolean} isDisable - If the category button is disable or not.
  * @param {String} size - The size for the category button: medium or big.
  * @return React CategoryButton component
  */
-const CategoryButton = ({action, color, disable, size, category}) => {
+const CategoryButton = ({action, isInColor, isDisable, size, category}) => {
     const smiley = getCategorySmiley(category);
 
     return (
     <button 
         className={`btn-category btn-category-${getClassSize(size)}`}
         onClick={action}
-        disabled={disable}
+        disabled={isDisable}
     >
-        {getSmiley(color, disable, smiley)}
+        {getSmiley(isInColor, isDisable, smiley)}
     </button>
     )
 }
