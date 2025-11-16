@@ -6,8 +6,8 @@ const Emptyface = () => {
     <>
         <defs>
             <linearGradient id="emptyGradient" gradientTransform="rotate(45)">
-            <stop offset="5%" stopColor="#97F0FE" />
-            <stop offset="95%" stopColor="#41D3F9" />
+            <stop offset="5%" stopColor="#a7f2feff" />
+            <stop offset="95%" stopColor="#30c2e7ff" />
             </linearGradient>
         </defs>
         <g id="Calque_1-2" data-name="Calque 1">
@@ -24,8 +24,8 @@ const NeutralFace = () => {
         <>
             <defs>
                 <linearGradient id="neutralGradient" gradientTransform="rotate(45)">
-                    <stop offset="5%" stopColor="#FFE65B" />
-                    <stop offset="95%" stopColor="#FFA917" />
+                    <stop offset="5%" stopColor="#ffed62ff" />
+                    <stop offset="95%" stopColor="#db8200" />
                 </linearGradient>
             </defs>
             <g id="Calque_1-2" data-name="Calque 1">
@@ -49,11 +49,11 @@ const HappyFace = () => {
             </defs>
             <g id="Calque_1-2" data-name="Calque 1">
                 <circle cx="86.83" cy="89.17" r="84.18" fill="url(#happyGradient)"/>
-                <circle cx="62.39" cy="71.08" r="12.03" fill="#021104"/>
-                <circle cx="114.15" cy="71.08" r="12.03" fill="#021104"/>
+                <circle cx="62.39" cy="71.08" r="12.03" fill="#021b05ff"/>
+                <circle cx="114.15" cy="71.08" r="12.03" fill="#021b05ff"/>
                 <path 
                     d="M112.11 107.99c3.99 0 6.98 3.72 6.05 7.59-3.41 14.13-16.14 24.63-31.32 24.63s-27.91-10.5-31.32-24.63c-.94-3.87 2.06-7.59 6.05-7.59h50.56Z" 
-                    fill="#021104"
+                    fill="#021b05ff"
                 />
             </g>
         </>
@@ -89,16 +89,16 @@ const UnhappyFace = () => {
             <defs>
                 <linearGradient id="unhappyGradient" gradientTransform="rotate(45)">
                     <stop offset="5%" stopColor="#f40400" />
-                    <stop offset="95%" stopColor="#ae1105" />
+                    <stop offset="95%" stopColor="#830000" />
                 </linearGradient>
             </defs>
             <g id="Calque_1-2" data-name="Calque 1">
                 <circle cx="86.83" cy="89.17" r="84.18" fill="url(#unhappyGradient)"/>
-                <circle cx="62.85" cy="71.08" r="12.03" fill="#3a0404"/>
-                <circle cx="114.61" cy="71.08" r="12.03" fill="#3a0404"/>
+                <circle cx="62.85" cy="71.08" r="12.03" fill="#3c0000ff"/>
+                <circle cx="114.61" cy="71.08" r="12.03" fill="#3c0000ff"/>
                 <path 
                     d="M55.51 136.55c3.41-14.13 16.14-24.63 31.32-24.63s27.91 10.5 31.32 24.63" 
-                    stroke="#3a0404"
+                    stroke="#3c0000ff"
                     className="neutral-mouth"
                 />
             </g>

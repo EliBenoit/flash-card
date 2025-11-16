@@ -2,7 +2,23 @@
     filter: grayscale(1);
 }
 
-.hover-face:hover, .color-face {
+#face-unhappy {
+    filter: grayscale(1) brightness(4.6);
+}
+
+#face-smile {
+    filter: grayscale(1) brightness(2.29);
+}
+
+#face-happy {
+    filter: grayscale(1) brightness(1.9);
+}
+
+.hover-face:hover,
+#face-unhappy:hover,
+#face-smile:hover,
+#face-happy:hover,
+.color-face {
     filter: unset;
 }
 
