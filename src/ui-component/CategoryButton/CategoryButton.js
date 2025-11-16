@@ -55,7 +55,7 @@ function getCategorySmiley(category) {
  * @param {Function} action - the action to call on click event.
  * @param {Boolean} isInColor - If the face need to have color.
  * @param {Boolean} isDisable - If the category button is disable or not.
- * @param {String} size - The size for the category button: medium or big.
+ * @param {String} size - The size for the category button: small, medium or big.
  * @return React CategoryButton component
  */
 const CategoryButton = ({action, isInColor, isDisable, size, category}) => {
