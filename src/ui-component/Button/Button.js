@@ -2,6 +2,9 @@
 import './style.css';
 import { getClassSize } from '../helpers';
 
+function getValidColor(color) {
+    return ['primary', 'secondary', 'default'].includes(color) ? color : 'default';
+}
 
 /**
  * Button component
@@ -9,16 +12,16 @@ import { getClassSize } from '../helpers';
  * @param {Function} action - the action to call on click event.
  * @param {Boolean} disable - If the button is disable or not.
  * @param {String} size - The button size: medium or big.
+ * @param {String} color - The button color, can be : primary, secondary or default. By default : default.
  * @param {*} children - Content to be display inside the button. 
  * @return React Button component
  */
-const Button = ({ action, disable, size, children }) => {
-
+const Button = ({ action, disable, size, children, color }) => {
     return (
         <button 
             onClick={action} 
             disabled={disable} 
-            className={`btn btn-${getClassSize(size)}`}
+            className={`btn btn-${getClassSize(size)} ${getValidColor(color)}-btn`}
         >
             {children}
         </button>

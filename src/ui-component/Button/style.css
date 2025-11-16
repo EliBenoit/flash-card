@@ -1,28 +1,53 @@
 .btn {
     box-shadow: var(--box-shadow);
-    background-color: var(--neutral-color);
     border : 4px solid transparent;
     border-radius: var(--medium-border-radius);
-    color:var(--secondary-color);
     width: max-content;
-    padding: 5%;
+    padding: 15px;
 }
 
-.btn:hover {
+.default-btn {
+    background-color: var(--neutral-color);
+    color:var(--secondary-color);
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--neutral-color);
+}
+
+.primary-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--neutral-color);
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: var(--neutral-color);
+}
+
+.secondary-btn:hover, .default-btn:hover {
     background-color: var(--primary-color);
     color: var(--neutral-color);
 }
 
 .btn:active {
     background-color: var(--neutral-color);
-    border-color: var(--primary-color);
     color:var(--secondary-color);
 }
 
-.medium {
+.default-btn:active, .secondary-btn:active {   
+    border-color: var(--primary-color);
+}
+
+.primary-btn:active {
+    border-color: var(--secondary-color);
+}
+
+.btn-medium {
     height: 78px;
 }
 
-.big {
+.btn-big {
     height: 105px;
 }
