@@ -36,6 +36,11 @@
     width: 80px;
 }
 
+.btn-category-small {
+    height: 60px;
+    width: 60px;
+}
+
 .neutral-mouth {
     fill:none;
     stroke-linecap:round;

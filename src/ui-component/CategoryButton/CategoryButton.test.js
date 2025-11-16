@@ -13,14 +13,38 @@ test('Trigger the bind action button', () => {
 test('Render button with default settings', () => {
     render(<CategoryButton />)
 
-    expect(screen.getByRole("button")).toHaveClass('btn-category btn-category-medium');
+    expect(screen.getByRole("button")).toHaveClass('btn-category-medium');
     expect(screen.getByTestId('face-empty')).toBeInTheDocument();
     expect(screen.getByTestId('face-empty')).not.toHaveClass('color-face');
     expect(screen.getByRole("button")).not.toBeDisabled();
 })
 
+test('Render button with small size', () => {
+    render(<CategoryButton size="small"/>)
+
+    expect(screen.getByRole("button")).toHaveClass('btn-category-small');
+})
+
+test('Render button with medium size', () => {
+    render(<CategoryButton size="medium"/>)
+
+    expect(screen.getByRole("button")).toHaveClass('btn-category-medium');
+})
+
+test('Render button with big size', () => {
+    render(<CategoryButton size="big"/>)
+
+    expect(screen.getByRole("button")).toHaveClass('btn-category-big');
+})
+
+test('Render button with wrong size', () => {
+    render(<CategoryButton size="bg"/>)
+
+    expect(screen.getByRole("button")).toHaveClass('btn-category-medium');
+})
+
 test('Render button with color setting', () => {
-    render(<CategoryButton color={true} />)
+    render(<CategoryButton isInColor={true} />)
 
     expect(screen.getByTestId('face-empty')).toHaveClass('color-face');
 })
