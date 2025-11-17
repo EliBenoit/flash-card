@@ -10,9 +10,9 @@
 }
 
 #progess-bar {
-    height: 14px;
+    height: 10px;
     background-color: var(--primary-color);
-    border-radius: 7px;
+    border-radius: 5px;
     box-shadow: var(--box-shadow);
 }
 
