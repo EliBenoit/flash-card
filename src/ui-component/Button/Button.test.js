@@ -103,7 +103,7 @@ test('render with small size', () => {
 
 test('render a disable button', () => {
   render(
-    <Button disable={true}>
+    <Button isDisable={true}>
         <p data-testid="test-children">Coucou</p>
     </Button>
   );
@@ -123,7 +123,7 @@ test('render a not disabled button', () => {
 
 test('render a not disabled button by default', () => {
   render(
-    <Button disable={false}>
+    <Button isDisable={false}>
         <p data-testid="test-children">Coucou</p>
     </Button>
   );
