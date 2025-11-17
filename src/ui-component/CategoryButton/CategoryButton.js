@@ -15,9 +15,12 @@ function getSmiley (isInColor, isDisable, smiley) {
     return (
     <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        id={`face-${smiley}`} 
-        data-testid={`face-${smiley}`} 
-        className={`grayscale-color ${isInColor && !isDisable ? 'color-face' : ''} ${!isDisable ? 'hover-face' : ''}`} 
+        id={`${smiley}-face`} 
+        data-testid={`${smiley}-face`} 
+        className={
+            `grayscale-color ${smiley}-face ${!isDisable ? 'hover-face' : ''}
+            ${isInColor && !isDisable ? 'color-face' : ''} 
+        `} 
         data-name={`face-${smiley}`} 
         viewBox="0 0 173.66 176.9"
     >
@@ -58,9 +61,12 @@ function getCategorySmiley(category) {
  * @param {String} size - The size for the category button: small, medium or big.
  * @return React CategoryButton component
  */
-const CategoryButton = ({action, isInColor, isDisable, size, category}) => {
+const CategoryButton = ({action,
+    isInColor = false,
+    isDisable = false,
+    size,
+    category}) => {
     const smiley = getCategorySmiley(category);
-
     return (
     <button 
         className={`btn-category btn-category-${getClassSize(size)}`}
