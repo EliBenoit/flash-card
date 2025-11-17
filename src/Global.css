@@ -4,6 +4,11 @@
   --primary-color: #638354;
   --secondary-color: #3B1F13;
   --neutral-color: #DFDBD9;
+  --noCategory-color: #30c2e799;
+  --unknow-color: #83000099;
+  --learning-color: #db820099;
+  --knowing-color: #7124B099;
+  --perfect-color:#00611299;
 
   /*Border*/
   --box-shadow: 0 3px 8px #00000026;
