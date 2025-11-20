@@ -1,0 +1,100 @@
+#dashboard {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    height: 100vh;
+    width: 100%;
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100px 1fr;
+    gap: 50px;
+    margin: 25px 6%;
+}
+
+.dashboard-container > h1 {
+    align-self: center;
+}
+
+.sidebar {
+    width: 150px;
+    height: 100%;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    width: 100%;
+    border-radius: calc(var(--big-border-radius) - 10px);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#answer {
+    height: 485px;
+}
+
+.display-zone {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#answer-side > .flex-row {
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+#question {
+    height: 385px;
+}
+
+#row-button {
+    display: flex;
+    gap: 10px;
+}
+
+#row-button > button > svg {
+    height: 30px;
+    width: 30px;
+}
+
+.action-button {
+    stroke: var(--secondary-color);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 5px;
+}
+
+#add-card {
+    height: 30px;
+    width: 30px;
+}
+
+.noCategory-background {
+    background-color: var(--noCategory-color);
+}
+
+.unknow-background {
+    background-color: var(--unknow-color);
+}
+
+.learning-background {
+    background-color: var(--learning-color);
+}
+
+.knowing-background {
+    background-color: var(--knowing-color);
+}
+
+.perfect-background {
+    background-color: var(--perfect-color);
+}
