@@ -43,6 +43,10 @@
     border-color: var(--secondary-color);
 }
 
+.btn:disabled {
+    opacity: 0.7;
+}
+
 .small-btn {
     height: 60px;
     padding: 10px;
