@@ -27,6 +27,10 @@
   border: unset;
 }
 
+p {
+  color: var(--secondary-color);
+}
+
 .app {
   background-color: var(--background-color);
   height: 100%;
@@ -47,6 +51,12 @@ h2 {
   font-size: 2.5rem;
 }
 
+legend {
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
 button {
   cursor: pointer;
 }
@@ -58,4 +68,9 @@ button:disabled {
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }

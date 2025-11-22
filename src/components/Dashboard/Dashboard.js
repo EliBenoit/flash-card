@@ -1,6 +1,6 @@
 // import
 import { useState } from 'react';
-import { CategoryButton } from '../../ui-component';
+import { Button, CategoryButton, Overlay } from '../../ui-component';
 import DashboardContent from './DasboardContent';
 import './style.css';
 
@@ -27,6 +27,18 @@ const SideBar = ({currentCategory, setCurrentCategory}) => {
     )
 }
 
+const NoDataOverlay = () => {
+    return (
+        <Overlay>
+            <div className="flex-column no-card">
+                <p>Aucun jeu de flash card détecté, merci d'en importer un.</p>
+                <Button size="small" color="primary">Importer</Button>
+                <legend>Fichier de type .CSV uniquement</legend>
+            </div>
+        </Overlay>
+    )
+}
+
 /**
  * Dashboard component
  * 
@@ -35,10 +47,13 @@ const SideBar = ({currentCategory, setCurrentCategory}) => {
  */
 const Dashboard = () => {
     const [currentCategory, setCurrentCategory] = useState("");
+    const data = null;
+
     return (
         <div id="dashboard" >
             <SideBar currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}/>
             <DashboardContent currentCategory={currentCategory} />
+            {!data && <NoDataOverlay /> }
         </div>
     )
 }
