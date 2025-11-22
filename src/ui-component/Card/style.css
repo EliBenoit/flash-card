@@ -3,4 +3,5 @@
     border-radius: var(--big-border-radius);
     box-shadow: var(--box-shadow);
     height: max-content;
+    background-color: var(--neutral-color);
 }
