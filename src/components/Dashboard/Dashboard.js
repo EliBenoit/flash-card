@@ -32,7 +32,11 @@ const NoDataOverlay = () => {
         <Overlay>
             <div className="flex-column no-card">
                 <p>Aucun jeu de flash card détecté, merci d'en importer un.</p>
-                <Button size="small" color="primary">Importer</Button>
+                <form id="myForm" className="flex-column flex-center">
+                    <input type="file" id="csvFile" accept=".csv" />
+                    <br />
+                    <Button type="submit" size="small" color="primary">Importer</Button>
+                </form>
                 <legend>Fichier de type .CSV uniquement</legend>
             </div>
         </Overlay>

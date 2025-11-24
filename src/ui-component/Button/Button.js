@@ -13,12 +13,14 @@ function getValidColor(color) {
  * @param {Boolean} isDisable - If the button is disable or not.
  * @param {String} size - The button size: small, medium or big.
  * @param {String} color - The button color, can be : primary, secondary or default. By default : default.
+ * @param {String} type - The html button type.
  * @param {*} children - Content to be display inside the button. 
  * @return React Button component
  */
-const Button = ({ action, isDisable, size, children, color }) => {
+const Button = ({ action, isDisable, size, children, color, type }) => {
     return (
         <button 
+            type={type}
             onClick={action} 
             disabled={isDisable} 
             className={`btn ${getClassSize(size)}-btn ${getValidColor(color)}-btn`}

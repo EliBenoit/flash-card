@@ -27,7 +27,7 @@
   border: unset;
 }
 
-p {
+p, input, button {
   color: var(--secondary-color);
 }
 
@@ -73,4 +73,9 @@ button:disabled {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
 }
