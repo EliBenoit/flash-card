@@ -11,7 +11,7 @@ const Overlay = ({children}) => {
     return (
         <>
         <div className="overlay-background"></div>
-        <div className="overlay">
+        <div className="flex-column flex-center overlay">
             <Card>
                 {children}
             </Card>

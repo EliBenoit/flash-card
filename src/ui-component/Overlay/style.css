@@ -1,9 +1,3 @@
-.overlay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .overlay-background, .overlay {
     width: 100%;
     height: 100%;
