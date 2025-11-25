@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Button, CategoryButton, Overlay } from '../../ui-component';
 import DashboardContent from './DasboardContent';
+import { filterCategory, getCategoryOptions, getCsvContent } from './helpers';
 import './style.css';
 
 /**
@@ -9,10 +10,11 @@ import './style.css';
  *  
  * @param {string} currentCategory - The current selected category.
  * @param {Function} setCurrentCategory - The function to call to update the selected category. 
+ * 
  * @return SideBar react component.
  */
 const SideBar = ({currentCategory, setCurrentCategory}) => {
-    const buttons = ["noCategory", "unknow", "learning", "knowing", "perfect"];
+    const buttons = getCategoryOptions("full");
     return (
         <div className="sidebar">
             {buttons.map((item) => (
@@ -27,15 +29,31 @@ const SideBar = ({currentCategory, setCurrentCategory}) => {
     )
 }
 
-const NoDataOverlay = () => {
+/**
+ * The overlay to import data
+ * @param {*} setData - Function to set data when retrieve.
+ * 
+ * @return the NoDataOverlay react component.
+ */
+const NoDataOverlay = ({setData}) => {
+
+    const csvFile = document.getElementsByName("csvFile");
+
     return (
         <Overlay>
             <div className="flex-column no-card">
                 <p>Aucun jeu de flash card détecté, merci d'en importer un.</p>
-                <form id="myForm" className="flex-column flex-center">
-                    <input type="file" id="csvFile" accept=".csv" />
+                <form id="csvForm" className="flex-column flex-center">
+                    <input type="file" name="csvFile" accept=".csv" />
                     <br />
-                    <Button type="submit" size="small" color="primary">Importer</Button>
+                    <Button 
+                        id="csvImport"
+                        size="small"
+                        color="primary"
+                        action={(e) => {
+                            e.preventDefault()
+                            getCsvContent(csvFile[0], setData)}}
+                    >Importer</Button>
                 </form>
                 <legend>Fichier de type .CSV uniquement</legend>
             </div>
@@ -50,14 +68,16 @@ const NoDataOverlay = () => {
  * @return React Dashboard component
  */
 const Dashboard = () => {
-    const [currentCategory, setCurrentCategory] = useState("");
-    const data = null;
+    const [data, setData] = useState(null)
+    const [currentCategory, setCurrentCategory] = useState(data ? "noCategory" : "");
+
+    const filteredData = data?.filter((obj, index) => filterCategory(obj, currentCategory, index));
 
     return (
         <div id="dashboard" >
             <SideBar currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}/>
-            <DashboardContent currentCategory={currentCategory} />
-            {!data && <NoDataOverlay /> }
+            <DashboardContent currentCategory={currentCategory} data={filteredData}/>
+            {!data && <NoDataOverlay setData={setData}/> }
         </div>
     )
 }
