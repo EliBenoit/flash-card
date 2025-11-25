@@ -10,7 +10,7 @@ import './style.css';
  * @returns {string} The percentage of progression.
  */
 function getPourcentage(currentStep, steps) { 
-    return `${currentStep / steps * 100}%`;
+    return `${Math.round(currentStep / steps * 100)}%`;
 }
 
 /**
