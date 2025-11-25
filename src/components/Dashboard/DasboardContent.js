@@ -16,11 +16,17 @@ import './style.css';
  */
 const DashboardContent = ({currentCategory, data}) => {
     const [currentStep, setCurrentStep] = useState(0);
+    const defaultData = {
+        question: "Pas de carte dans la catégorie",
+        answer: "Pas de carte dans la catégorie"
+    };
+    const {question, answer} = data.length > 0 ? data[currentStep] : defaultData;
+    
     return (
         <div className="dashboard-container">
             <h1>Flash card</h1>
             <div>
-                <ProgressBar currentStep={currentStep} steps={data ? data.length + 1 : 10} />
+                <ProgressBar currentStep={currentStep} steps={data ? data.length + 1 : 0} />
             </div>
             <Card>
                 <div
@@ -28,12 +34,12 @@ const DashboardContent = ({currentCategory, data}) => {
                     className={`${currentCategory}-background card-container`}
                 >
                     <CardHeader title="Question" />
-                    <p className="display-zone">{data[currentStep]?.question}</p>
+                    <p className="display-zone">{question}</p>
                 </div>
             </Card>
             <AnswerSide 
                 answer={{
-                    content: data[currentStep]?.answer,
+                    content: answer,
                     id: `answer${currentStep}`,
                 }}
                 steps={{

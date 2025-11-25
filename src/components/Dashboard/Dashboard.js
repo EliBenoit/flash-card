@@ -69,15 +69,20 @@ const NoDataOverlay = ({setData}) => {
  */
 const Dashboard = () => {
     const [data, setData] = useState(null)
-    const [currentCategory, setCurrentCategory] = useState(data ? "noCategory" : "");
+    const [currentCategory, setCurrentCategory] = useState("");
 
-    const filteredData = data?.filter((obj, index) => filterCategory(obj, currentCategory, index));
+    const filteredData = data ? data.filter((obj, index) => filterCategory(obj, currentCategory, index)) : [];
+
+    const importContent = (content) => {
+        setData(content);
+        setCurrentCategory("noCategory")
+    }
 
     return (
         <div id="dashboard" >
             <SideBar currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}/>
             <DashboardContent currentCategory={currentCategory} data={filteredData}/>
-            {!data && <NoDataOverlay setData={setData}/> }
+            {!data && <NoDataOverlay setData={importContent}/> }
         </div>
     )
 }
